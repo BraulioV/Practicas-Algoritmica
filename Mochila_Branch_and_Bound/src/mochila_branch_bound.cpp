@@ -48,6 +48,12 @@ struct Elemento {
     }
 };
 
+//******************************************************************************
+// Nodo: 
+// 
+// - Estructura para calcular, generar 
+//******************************************************************************
+
 struct Nodo {
     double CI;                  // Cota inferior
     double CS;                  // Cota superior
