@@ -4,6 +4,12 @@
 
 using namespace std;
 
+
+//******************************************************************************
+// Estructura de datos para almacenar toda la información del objeto
+//******************************************************************************
+
+
 struct Elemento{
     int beneficio;
     int peso;
@@ -86,6 +92,11 @@ int max(int i, int j){
         return j;
 }
 
+//******************************************************************************
+// Algoritmo de la mochila. En el se rellena la tabla con la que más adelante
+// se recompone la solución.
+//******************************************************************************
+
 void Mochila(vector< vector <int> > & tabla, const vector<Elemento> & elementos){
     for(int i = 1; i < tabla.size(); i++){
         for(int j = 1; j < tabla[i].size(); j++){
@@ -100,6 +111,10 @@ void Mochila(vector< vector <int> > & tabla, const vector<Elemento> & elementos)
         }
     } 
 }
+
+//******************************************************************************
+// Algoritmo para recomponer la solución
+//******************************************************************************
 
 void recomponer(const vector< vector <int> > & tabla, const vector<Elemento> & elementos,
     vector<int> & sol){
