@@ -8,6 +8,7 @@
 3. __Algoritmos Greedy__: implementación del problema de la mochila fraccional en C++. Teniendo un conjunto inicial de objetos, escoge aquellos que aportan mayor beneficio para una mochila de peso M, ya sea objetos enteros o fraccionados. Esto se resuelve haciendo uso de un algoritmo __Greedy__.
 4. __Programación Dinámica__: implementación del problema de la mochila 0/1 en C++, pero en este caso sólo cogiendo objetos enteros (coger o no coger el objeto) y haciendo uso de un algoritmo de __Programación Dinámica__.
 5. __Branch & Bound__: implementación de la mochila 0/1 en C++ haciendo uso de un algoritmo  __Branch and Bound__.
+6. __Guión__: guión de prácticas donde están explicados los ejercicios y los distintos algoritmos de forma más extendida.
 
 ## Cómo usarlo
 
@@ -23,7 +24,10 @@
 4. __Programacion Dinámica__: igual que el anterior:
       - *make*: para compilar
       - *./bin/mochila B P B P ... PESOMOCHILA*
-4. __Branch & Bound__: igual que las dos anteriores:
+5. __Branch & Bound__: igual que las dos anteriores:
       - *make*: para compilar
       - *./bin/mochila B P B P ... PESOMOCHILA*
+6. __Guión__: para compilar y que aparezcan los enlaces, hay que compilar dos veces usando el comando en terminal:
+      - *pdflatex -shell-escape Entrega.tex*
+      Nota: Hay que tener el paquete de *minted* y *pygmentize* instalados.
 
