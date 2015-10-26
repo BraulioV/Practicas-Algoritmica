@@ -3,6 +3,9 @@
 #include <iomanip>
 
 using namespace std;
+//******************************************************************************
+// Estructura de datos para almacenar la información del objeto
+//******************************************************************************
 
 struct Objeto{
 	double beneficio;
@@ -36,6 +39,11 @@ struct Objeto{
 		beneficio_unidad_peso = beneficio/peso;
 	}
 };
+
+//******************************************************************************
+// Almacena la opción que se ha cogido para el objeto o y el porcentaje que se
+// coge de el.
+//******************************************************************************
 
 struct Opcion{
 	Objeto o;
