@@ -48,12 +48,12 @@ struct Elemento{
 ostream & operator << (ostream & os, const vector< vector<int> > & v){
     os << "---------------------------------------------------" << endl;
     os << 'v' << setw(2) << '|';
-    for(int i = 0; i < v[0].size(); i++)
+    for(unsigned i = 0; i < v[0].size(); i++)
         os << setw(2) << i << setw(2) << '|';
     os << endl << "---------------------------------------------------" << endl;
-    for(int i = 0; i < v.size(); i++){
+    for(unsigned i = 0; i < v.size(); i++){
         os << i << setw(2) << '|';
-        for(int j = 0; j < v[i].size(); j++)
+        for(unsigned j = 0; j < v[i].size(); j++)
             os << setw(2) << v[i][j] << setw(2) << '|';
 
         os << endl << "---------------------------------------------------" << endl;
@@ -63,7 +63,7 @@ ostream & operator << (ostream & os, const vector< vector<int> > & v){
 }
 
 ostream & operator << (ostream & os, const vector<Elemento> & v){
-    for(int i = 0; i < v.size(); i++)
+    for(unsigned i = 0; i < v.size(); i++)
         os << setw(4) << "Peso=" << v[i].peso 
             << " Beneficio=" << v[i].beneficio << endl;
     os << endl;
@@ -77,7 +77,7 @@ ostream & operator << (ostream & os, const Elemento & v){
 }
 
 ostream & operator << (ostream & os, const vector<int> & v){
-    for(int i = 0; i < v.size(); i++)
+    for(unsigned i = 0; i < v.size(); i++)
         os << setw(4) << v[i];
 
     os << endl;
@@ -98,8 +98,8 @@ int max(int i, int j){
 //******************************************************************************
 
 void Mochila(vector< vector <int> > & tabla, const vector<Elemento> & elementos){
-    for(int i = 1; i < tabla.size(); i++){
-        for(int j = 1; j < tabla[i].size(); j++){
+    for(unsigned i = 1; i < tabla.size(); i++){
+        for(unsigned j = 1; j < tabla[i].size(); j++){
             Elemento k_i = elementos[i -1];
             if(j - k_i.peso < 0){
               tabla[i][j] = tabla[i-1][j];
@@ -119,7 +119,7 @@ void Mochila(vector< vector <int> > & tabla, const vector<Elemento> & elementos)
 void recomponer(const vector< vector <int> > & tabla, const vector<Elemento> & elementos,
     vector<int> & sol){
     int j = tabla[0].size()-1;
-    for(int i = tabla.size()-1; i>=1; i--)
+    for(unsigned i = tabla.size()-1; i>=1; i--)
         if(tabla[i][j] == tabla[i-1][j])
             sol[i-1] = 0;       // tabla[i][j] == tabla[i-1][j-p_i + b]
         else{
@@ -183,7 +183,7 @@ int main(int argc, char **argv){
         (double)((cgt4.tv_nsec-cgt3.tv_nsec)/(1.e+9));
 
     cout << "Elementos escogidos: " << setw(5);
-    for(int i = 0; i < elementos.size(); i++){
+    for(unsigned i = 0; i < elementos.size(); i++){
         if(sol[i] == 1)
             cout << elementos[i] << setw(5);
     }
